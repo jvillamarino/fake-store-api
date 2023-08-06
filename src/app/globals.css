@@ -78,7 +78,7 @@
     @apply bg-background text-foreground;
   }
   body {
-    @apply m-0 p-0 flex flex-col min-h-screen items-center box-border outline-none border-none;
+    @apply m-0 p-0 flex flex-col min-h-screen items-center box-border outline-none border-none overflow-x-hidden;
     @apply transition-all ease-linear;
   }
 }
