@@ -5,9 +5,9 @@ export default function Cover() {
     return (
         <section className="block md:h-[45hv] lg:h-[55hv] xl:h-[70vh] overflow-x-hidden">
             <article className="flex flex-row max-h-full max-w-full w-auto h-auto relative">
-                <Image loading='lazy' layout="fixed" width={1400} height={300} quality={100} objectFit="cover"
+                <Image loading='eager' width={1400} height={300} quality={100} priority={true}
                     src="/images/girl-rockstar.jpg" alt="Girl Rockstar" className='max-h-full max-w-full h-auto w-9/12' />
-                <Image loading='lazy' layout="fixed" width={600} height={450} objectFit="cover" quality={100}
+                <Image loading='lazy' width={600} height={450} quality={100}
                     src="/images/rockstar.jpg" alt="Boy Rockstar" className='max-h-full max-w-full h-auto w-3/12' />
 
                 <div className="absolute w-full h-full flex flex-col justify-center items-center gap-1">

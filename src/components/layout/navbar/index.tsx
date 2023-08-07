@@ -3,7 +3,7 @@ import { ModeToggle } from "./mode-toggle";
 export default function Navbar() {
     return (
         <header className="w-full block">
-            <nav className="flex flex-row justify-between items-center py-4 px-8 bg-backgroundElement shadow">
+            <nav className="flex flex-row justify-between items-center py-4 px-8 bg-backgroundElement">
                 <h1 className="text-3xl font-bold">
                     <a href="/">
                         Sunner

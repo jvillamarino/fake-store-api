@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 export default function GridSection() {
     return (
@@ -26,7 +27,9 @@ export default function GridSection() {
                             </p>
                         </div>
                         <Button size="sm" className="">
-                            Ask for it
+                            <Link href="/products">
+                                Ask for it
+                            </Link>
                         </Button>
                     </div>
                 </div>
