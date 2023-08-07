@@ -13,7 +13,7 @@ export default async function Categories({ searchParams: { category: categoryPar
                 <div className="flex flex-col gap-2 m-8">
                     {categories?.map((category: Category) => <div key={category.id}>
                         <Link href={category.link}>
-                            <Checkbox id={category.id} checked={category.link === categoryParam} />
+                            <Checkbox id={category.id} checked={categoryParam === category.text || categoryParam === undefined} />
                             <label
                                 htmlFor={category.id}
                                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 capitalize cursor-pointer ml-4"
