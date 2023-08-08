@@ -5,6 +5,7 @@ import { Poppins } from 'next/font/google'
 import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/footer/footer'
 import { CartProvider } from '@/providers/cart-provider'
+import { Suspense } from 'react'
 
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900',], style: 'normal', subsets: ['latin'] })
 
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" className='scroll-smooth'>
       <body className={poppins.className}>
+
         <ThemeProvider>
           <CartProvider>
-
-            <Navbar />
+            <Suspense>
+              <Navbar />
+            </Suspense>
             <main className='grid flex-1 min-h-full w-full'>
               {children}
             </main>
