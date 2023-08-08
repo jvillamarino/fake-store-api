@@ -1,13 +1,36 @@
 'use client';
 
 import { CartProdivderInterface, Product } from "@/models";
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 export const ShoppingCartContext = createContext<CartProdivderInterface>({} as CartProdivderInterface);
 
+
+const LOCALSTORAGE_CART_KEY = 'FakeStoreCart';
+
+const getCartFromLocalStorage = (): Product[] => {
+    if (typeof window !== 'undefined') {
+        return JSON.parse(localStorage.getItem(LOCALSTORAGE_CART_KEY) ?? '[]');
+    }
+
+    return [];
+}
+
+const setCartToLocalStorage = (cart: Product[]): void => {
+    if (typeof window !== 'undefined') {
+        localStorage.setItem(LOCALSTORAGE_CART_KEY, JSON.stringify(cart));
+    }
+
+}
+
+
 export function CartProvider({ children }: { children: ReactNode }) {
 
-    const [cart, setCart] = useState<Product[]>([]);
+    const [cart, setCart] = useState<Product[]>(getCartFromLocalStorage());
+
+    useEffect(() => {
+        setCartToLocalStorage(cart);
+    }, [cart])
 
     const getCartProducts: Product[] = cart;
 
