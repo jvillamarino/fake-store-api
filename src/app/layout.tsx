@@ -25,7 +25,7 @@ export default function RootLayout({
           <CartProvider>
 
             <Navbar />
-            <main className='flex-1 min-h-full w-full'>
+            <main className='grid flex-1 min-h-full w-full'>
               {children}
             </main>
             <Footer />

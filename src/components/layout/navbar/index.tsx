@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import ShoppingCart from "./shopping-cart/shopping-cart";
 
@@ -7,9 +8,9 @@ export default function Navbar() {
         <header className="w-full block">
             <nav className="flex flex-row justify-between items-center py-4 px-8 bg-backgroundElement">
                 <h1 className="text-3xl font-bold">
-                    <a href="/">
-                        Sunner
-                    </a>
+                    <Link href="/">
+                        Sonner
+                    </Link>
                 </h1>
                 <div className="flex flex-row items-center">
                     <h1 className="text-2xl font-bold">
@@ -24,7 +25,7 @@ export default function Navbar() {
                         </a>
                     </h1>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-2">
                     <ModeToggle />
                     <ShoppingCart />
                 </div>

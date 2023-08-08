@@ -27,8 +27,8 @@ export default function GridSection() {
                             </p>
                         </div>
                         <Button size="sm" className="">
-                            <Link href="/products">
-                                Ask for it
+                            <Link href="/products" className='text-xs sm:text-sm'>
+                                See products
                             </Link>
                         </Button>
                     </div>

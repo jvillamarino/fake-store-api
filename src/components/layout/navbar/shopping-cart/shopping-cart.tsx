@@ -10,7 +10,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { ShoppingCartContext } from "@/providers/cart-provider"
-import { ShoppingBag } from "lucide-react"
+import { PackageSearch, ShoppingBag } from "lucide-react"
 import { useContext } from "react"
 import ProductListItemCard from "./product-list-cart"
 import { CartProdivderInterface, Product } from "@/models"
@@ -38,10 +38,21 @@ export default function ShoppingCart() {
                             You can pay with Apple Pay
                         </SheetDescription>
                     </SheetHeader>
-                    <div className="flex flex-grow-0 flex-col gap-2 mt-4">
-                        {getCartProducts.map((product: Product) => <ProductListItemCard key={product.id} product={product} />)}
-                    </div>
+                    {
+                        getCartProducts.length > 0 &&
+                        <div className="flex flex-grow-0 flex-col gap-2 mt-4">
+                            {getCartProducts.map((product: Product) => <ProductListItemCard key={product.id} product={product} />)}
+                        </div>
+                    }
+
                 </div>
+                {
+                    !getCartProducts.length &&
+                    <div className="flex flex-grow-0 flex-col gap-2 self-center items-center">
+                        <h1 className="text-xl font-bold text-center">No products to pay</h1>
+                        <PackageSearch size={64} strokeWidth={2} />
+                    </div>
+                }
 
                 <div className="flex w-full justify-between mt-4">
                     <h1 className="text-xl font-bold">Total</h1>
