@@ -9,6 +9,24 @@ import { Product } from "..";
  * @interface CartProdivderInterface
  */
 export interface CartProdivderInterface {
+
+    /**
+     * getCartProducts
+     * 
+     * Get the products in the cart
+     *
+     * @memberof CartProdivderInterface
+     */
+    getCartProducts: Product[];
+
+    /**
+     * getTotal
+     *
+     * @type {number}
+     * @memberof CartProdivderInterface
+     */
+    getTotal: number;
+
     /**
      * getQuantityByProduct
      * 
@@ -17,7 +35,6 @@ export interface CartProdivderInterface {
      * @memberof CartProdivderInterface
      */
     getQuantityByProduct: (id: number) => number;
-
 
     /**
      * addProduct
@@ -28,7 +45,6 @@ export interface CartProdivderInterface {
      */
     addProduct: (product: Product) => void;
 
-
     /**
      * removeProduct
      * 
@@ -37,4 +53,14 @@ export interface CartProdivderInterface {
      * @memberof CartProdivderInterface
      */
     removeProduct: (id: number) => void;
+
+    /**
+     * getCartItemsLength
+     * 
+     * get the length of the cart
+     *
+     * @memberof CartProdivderInterface
+     */
+    getCartItemsLength: () => number;
+
 }

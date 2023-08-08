@@ -2,16 +2,10 @@
 'use client';
 
 import { Product } from "@/models";
-import { ShoppingCartContext } from "@/providers/cart-provider";
 import Image from "next/image";
-import { useContext } from "react";
-import { Button } from "../ui/button";
-import { Minus, Plus } from "lucide-react";
+import AddRemoveProductCart from "../product-components/add-remove";
 
 export default function ProductCard({ product }: { product: Product }) {
-
-    const { addProduct, getQuantityByProduct, removeProduct }: any = useContext(ShoppingCartContext);
-
 
     return (
         <article className="flex flex-col max-h-full w-full h-full bg-backgroundElement p-4 rounded-md shadow-sm space-y-2">
@@ -33,28 +27,9 @@ export default function ProductCard({ product }: { product: Product }) {
                 <span className="text-xs font-medium capitalize bg-background p-2 w-fit rounded-md">{product.category}</span>
 
 
-
                 <div className="flex justify-between items-baseline">
                     <p className="text-base font-bold leading-none">${product.price}</p>
-                    <div className="flex justify-between items-center gap-1">
-
-                        {getQuantityByProduct(product.id) !== 0 &&
-                            <>
-
-                                <Button variant='outline' size="rounded-icon" onClick={() => removeProduct(product.id)}>
-                                    <Minus className="h-4 w-4" />
-                                </Button>
-                                <span>
-                                    {getQuantityByProduct(product.id)}
-                                </span>
-                            </>
-                        }
-
-                        <Button variant='outline' size='rounded-icon' onClick={() => addProduct(product)} >
-                            <Plus className="h-4 w-4" />
-                        </Button>
-
-                    </div>
+                    <AddRemoveProductCart product={product} />
                 </div>
 
             </div>

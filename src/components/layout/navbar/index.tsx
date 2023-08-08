@@ -1,4 +1,6 @@
 import { ModeToggle } from "./mode-toggle";
+import ShoppingCart from "./shopping-cart/shopping-cart";
+
 
 export default function Navbar() {
     return (
@@ -22,7 +24,10 @@ export default function Navbar() {
                         </a>
                     </h1>
                 </div>
-                <ModeToggle />
+                <div className="flex gap-4">
+                    <ModeToggle />
+                    <ShoppingCart />
+                </div>
             </nav >
         </header>
     )
